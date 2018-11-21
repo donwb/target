@@ -1,0 +1,30 @@
+
+https://selenium-python.readthedocs.io/getting-started.html
+
+
+### Selinium example w/Beautiful Soup
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+import urllib, os, urllib.request
+import time
+
+driver = webdriver.Safari()
+
+usrName = 'your_email'
+pssWrd = "your_password"
+
+driver.maximize_window()
+driver.get("https://www.linkedin.com/uas/login?")
+
+driver.find_element_by_name('session_key').send_keys(usrName)
+driver.find_element_by_class_name('password').send_keys(pssWrd)
+driver.find_element_by_name('signin').click()
+
+
+Target URL:
+https://www.target.com/p/dr-pepper-ten-12pk-12-fl-oz-cans/-/A-14940477
+
